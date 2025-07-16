@@ -1,1 +1,1 @@
-Voce acting... IN MAKCODE ARCADE
+Voice acting... IN MAKCODE ARCADE
