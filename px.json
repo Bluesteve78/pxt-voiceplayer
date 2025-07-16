@@ -1,0 +1,10 @@
+{
+  "name": "voiceplayer",
+  "description": "Play voice acting clips in your MakeCode Arcade game",
+  "dependencies": {},
+  "files": [
+    "main.ts",
+    "README.md"
+  ],
+  "public": true
+}
