@@ -1,20 +1,19 @@
 //% color="#FF0080" icon="\uf130" block="Voice Player"
 namespace voiceplayer {
-    let voiceMap: { [key: string]: string } = {}
+    let voiceMap: { [key: string]: music.SoundEffect } = {}
 
-    //% block="set voice $id to sound $base64"
-    export function setVoiceMapping(id: string, base64: string) {
-        voiceMap[id] = base64
+    //% block="set voice $id"
+    export function setVoice(id: string, sound: music.SoundEffect) {
+        voiceMap[id] = sound
     }
 
     //% block="play voice $id"
     export function playVoice(id: string) {
-        const data = voiceMap[id]
-        if (data) {
-            const sound = music.createSoundEffectFromBuffer(hex`${data}`)
-            music.playSoundEffect(sound)
+        const sfx = voiceMap[id]
+        if (sfx) {
+            music.playSoundEffect(sfx, SoundExpressionPlayMode.UntilDone)
         } else {
-            console.log(`No voice for ID: ${id}`)
+            console.log(`Voice '${id}' not found`)
         }
     }
 
